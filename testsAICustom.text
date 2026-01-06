@@ -1,0 +1,48 @@
+
+#(1)PRUEBA DE LAS FACTURAS
+curl -s -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_input":"Has invoice 1905 been paid?"}' | jq .
+
+
+
+#(2.1)PRUEBA DE OBTENER CORREO DE UN USUARIO
+curl -s -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_input": "What is the email address of Carlo?"
+  }' | jq .
+
+#(2.2)PRUEBA DE ENVIAR CORREO DE UN USUARIO
+curl -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_input": "Send an email to Enrique telling him that the SAP BTP AI Agent email functionality is working correctly."
+  }'
+
+
+#(3)PRUEBA DE FAQ
+curl -s -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_input":"¿Qué significan las siglas SAP?"}' | jq .
+
+
+curl -s -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{"user_input":"When was SAP founded?"}' | jq .
+
+
+#(4)PRUEBA DE OBTENER TEXTO DE UN LINK
+curl -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_input": "Read the content of the following link and give me a short summary: https://en.wikipedia.org/wiki/SAP"
+  }'
+
+
+#(5)PRUEBA DE API DE ARTE
+curl -s -X POST "URL DE TU AGENTE CUSTOM DESPLEGADO EN CLOUD FOUNDRY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_input": "What is currently on ARTE TV?"
+  }' | jq .

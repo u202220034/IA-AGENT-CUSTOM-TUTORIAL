@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog title="Editar pregunta" draggable="true" resizable="true">
+
+        <VBox class="sapUiSmallMargin">
+            <TextArea
+                value="{/selected/question}"
+                rows="5"
+                width="100%" />
+        </VBox>
+
+        <beginButton>
+            <Button
+                text="Guardar cambios"
+                type="Emphasized"
+                press=".onSaveEdit" />
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="Cancelar"
+                press=".onCloseEditDialog" />
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

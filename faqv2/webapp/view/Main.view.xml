@@ -1,0 +1,150 @@
+<mvc:View
+    controllerName="faqv2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="page" title="FAQ – Administración de Preguntas">
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+
+                <HBox
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    wrap="Wrap">
+
+                    <!-- Buscar pregunta -->
+                    <SearchField
+                        width="20rem"
+                        placeholder="Buscar pregunta"
+                        liveChange=".onSearch"
+                    />
+
+                    <!-- Rango de fechas -->
+                    <DateRangeSelection
+                        width="20rem"
+                        placeholder="Fecha de creación"
+                        change=".onDateFilter"
+                    />
+                </HBox>
+            </VBox>
+            <IconTabBar
+                select=".onTabSelect"
+                expandable="false">
+
+                <items>
+
+                    <!-- ================= PENDING ================= -->
+                    <IconTabFilter
+                        text="Pendientes"
+                        key="PENDING"
+                        icon="sap-icon://pending"
+                        count="{pending>/items/length}">
+                        <Table id="pendingTable" items="{pending>/items}">
+                            <columns>
+                                <Column width="6rem"><Text text="ID"/></Column>
+                                <Column><Text text="Question"/></Column>
+                                <Column width="11rem"><Text text="Fecha de creación"/></Column>
+                                <Column width="8rem"><Text text="Created By"/></Column>
+                                <Column width="12rem" hAlign="Center"><Text text="Actions"/></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{pending>aid}"/>
+                                        <Text text="{pending>question}"/>
+                                        <Text
+                                            text="{
+                                                path: 'pending>created_at',
+                                                formatter: '.formatDateTime'
+                                            }"/>
+                                        <Text text="{pending>created_by}"/>
+
+                                        <HBox justifyContent="Center" gap="0.5rem">
+                                            <Button text="Edit" type="Transparent" press=".onEdit"/>
+                                            <Button text="Answer" type="Emphasized" press=".onAnswer"/>
+                                            <Button text="Delete" type="Reject" press=".onDelete"/>
+                                        </HBox>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+
+                    <!-- ================= ACTIVE ================= -->
+                    <IconTabFilter
+                        text="Activas"
+                        key="ACTIVE"
+                        icon="sap-icon://accept"
+                        count="{active>/items/length}">
+                        <Table id="activeTable" items="{active>/items}">
+                            <columns>
+                                <Column><Text text="ID"/></Column>
+                                <Column><Text text="Question"/></Column>
+                                <Column><Text text="Fecha de creación"/></Column>
+                                <Column><Text text="Created By"/></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{active>aid}"/>
+                                        <Text text="{active>question}"/>
+                                        <Text
+                                            text="{
+                                                path: 'active>created_at',
+                                                formatter: '.formatDateTime'
+                                            }"/>
+                                        <Text text="{active>created_by}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+
+                    <!-- ================= DELETED ================= -->
+                    <IconTabFilter
+                        text="Eliminadas"
+                        key="DELETED"
+                        icon="sap-icon://delete"
+                        count="{deleted>/items/length}">
+                        <Table id="deletedTable" items="{deleted>/items}">
+                            <columns>
+                                <Column><Text text="ID"/></Column>
+                                <Column><Text text="Question"/></Column>
+                                <Column><Text text="Fecha de creación"/></Column>
+                                <Column><Text text="Created By"/></Column>
+                                <Column width="10rem" hAlign="Center"><Text text="Actions"/></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{deleted>aid}"/>
+                                        <Text text="{deleted>question}"/>
+                                        <Text
+                                            text="{
+                                                path: 'deleted>created_at',
+                                                formatter: '.formatDateTime'
+                                            }"/>
+                                        <Text text="{deleted>created_by}"/>
+                                        <HBox justifyContent="Center">
+                                            <Button
+                                            text="Restore"
+                                            type="Accept"
+                                            tooltip="Restaurar pregunta eliminada"
+                                            press=".onRestore"/>
+                                        </HBox>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+
+                </items>
+            </IconTabBar>
+        </content>
+
+    </Page>
+</mvc:View>

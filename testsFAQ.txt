@@ -1,0 +1,27 @@
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"Who is the CEO of SAP?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"Who is currently on SAP's board?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"¿Quien es el CEO de SAP?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"When was SAP founded?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"¿Cuando se fundo SAP?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"Hello, I need your help with a question. First of all, for me, SAP is a very important company, not to mention one of the best, but I would like to know, when was it founded?\"}"
+
+curl -X POST *URL DE TU AGENTE FAQ* \
+  -H "Content-Type: application/json" \
+  -d "{\"user_request\": \"Hola, quiero que me ayudes con una consulta, primero para mi es una empresa muy importante por no decir una de las mejoras, SAP, pero quisiera saber, ¿Cuando se fundo?\"}"

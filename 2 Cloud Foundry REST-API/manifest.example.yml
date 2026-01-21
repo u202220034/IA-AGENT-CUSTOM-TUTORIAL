@@ -1,0 +1,25 @@
+---
+  applications:
+  - name: btpaiagentNTT
+    disk_quota: 1G
+    memory: 768M
+    buildpacks:
+    - https://github.com/cloudfoundry/python-buildpack.git
+    command: python btpaiagent.py
+    random-route: false
+    env:
+      AICORE_BASE_URL: 
+      AICORE_CLIENT_ID: 
+      AICORE_CLIENT_SECRET: 
+      AICORE_AUTH_URL: 
+      AICORE_RESOURCE_GROUP: default
+
+      SAP_HANA_CLOUD_ADDRESS: 
+      SAP_HANA_CLOUD_PORT: "443"
+      SAP_HANA_CLOUD_USER: 
+      SAP_HANA_CLOUD_PASSWORD: 
+
+      MAILTRAP_SMTP_USER: 
+      MAILTRAP_SMTP_PASS: 
+
+      ADMIN_NOTIFICATION_EMAIL: 

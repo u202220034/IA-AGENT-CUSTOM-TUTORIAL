@@ -631,12 +631,12 @@ def get_email_address(name: str) -> str:
    """
 
    dict = {}
-   dict['Carlo'] = 'CarloJesus.GarciaTina.st@emeal.nttdata.com'
-   dict['Ronald'] = 'RonaldYamil.CuellarButron.st@emeal.nttdata.com'
-   dict['John'] = 'JohnGonzalo.SanabriaServa.st@emeal.nttdata.com'
-   dict['Enrique'] = 'EnriqueBryan.CastilloTito.st@emeal.nttdata.com'
-   dict['Admin'] = 'EnriqueBryan.CastilloTito.st@emeal.nttdata.com'
-   dict['Administrador'] = 'EnriqueBryan.CastilloTito.st@emeal.nttdata.com'
+   dict['Carlo'] = 'tucorreo@tuempresa.com'
+   dict['Ronald'] = 'tucorreo@tuempresa.com'
+   dict['John'] = 'tucorreo@tuempresa.com'
+   dict['Enrique'] = 'tucorreo@tuempresa.com'
+   dict['Admin'] = 'tucorreo@tuempresa.com'
+   dict['Administrador'] = 'tucorreo@tuempresa.com'
 
    if name in dict.keys():
       response = dict[name]

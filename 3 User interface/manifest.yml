@@ -1,0 +1,9 @@
+---
+applications:
+- name: btpassistantNTT
+  disk_quota: 1G
+  memory: 256M
+  buildpacks:
+  - python_buildpack
+  command: streamlit run btpassistant.py --server.port $PORT
+  random-route: false
